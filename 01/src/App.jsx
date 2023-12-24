@@ -23,6 +23,20 @@ export default function App() {
       body: JSON.stringify(newUserObj)
     })
     console.log(res);
+
+    if(res.status === 201){
+      swal({
+        title: 'ثبت نام شما با موفقیت انجام شد',
+        icon: 'success',
+        buttons: 'خیلی هم عالی'
+      })
+    }else{
+      swal({
+        //Error
+      })
+    }
+
+
     const newUserResult = await res.json()
     console.log(newUserResult);
 
