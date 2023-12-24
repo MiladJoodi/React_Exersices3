@@ -1,8 +1,11 @@
 {
     "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" },
+      { "id": 1, "title": "json-server", "author": "typicode", "details": {
+        "time" : "12:03",
+        "studentCount" : 98
+      } },
       { "id": 2, "title": "what is npm", "author": "milad" },
-      { "id": 3, "title": "learn react js", "author": "joodi" }
+      { "id": 3, "title": "learn react js", "author": "milad" }
     ],
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
