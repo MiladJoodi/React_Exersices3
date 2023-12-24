@@ -1,19 +1,153 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode", "details": {
-        "time" : "12:03",
-        "studentCount" : 98
-      } },
-      { "id": 2, "title": "what is npm", "author": "milad" },
-      { "id": 3, "title": "learn react js", "author": "milad" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "users": [
-        { "id": 1, "name": "milad", "age": 23 },
-        { "id": 2, "name": "alireza", "age": 25 },
-        { "id": 3, "name": "zahra", "age": 18 }
-      ],
-    "profile": { "name": "typicode" }
-  }
+  "courses": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "teacher": "typicode",
+      "views": 189,
+      "details": {
+        "time": "12:03",
+        "studentsCount": 98
+      }
+    },
+    {
+      "id": 2,
+      "title": "what is npm",
+      "teacher": "amin_saeedi",
+      "views": 200
+    },
+    {
+      "id": 3,
+      "title": "learn react js",
+      "teacher": "qadir_yolme",
+      "views": 90
+    },
+    {
+      "id": 4,
+      "title": "learn vue js",
+      "teacher": "amin_saeedi",
+      "views": 302
+    },
+    {
+      "id": 5,
+      "title": "vue js",
+      "teacher": "amin_saeedi",
+      "views": 182
+    },
+    {
+      "id": 6,
+      "title": "Node js",
+      "teacher": "amin_saeedi",
+      "views": 99
+    },
+    {
+      "id": 7,
+      "title": "Js Ex",
+      "teacher": "amin_saeedi",
+      "views": 982
+    },
+    {
+      "id": 8,
+      "title": "Black JS",
+      "teacher": "qadir_yolme",
+      "views": 19
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "ممنون از دوره خوب شما",
+      "courseId": 1,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "body": "لطفا دوره رو سریع‌تر استارت بزنید",
+      "courseId": 4
+    },
+    {
+      "id": 3,
+      "body": "لطفا پروژه فلان رو هم تو دوره هندل کنید",
+      "courseId": 6
+    },
+    {
+      "id": 4,
+      "body": "دوره خیلی خوبی بود",
+      "courseId": 7
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "amin",
+      "age": 23
+    },
+    {
+      "id": 2,
+      "name": "sasan",
+      "age": 25
+    },
+    {
+      "id": 3,
+      "name": "zahra",
+      "age": 18
+    },
+    {
+      "name": "Asgar",
+      "age": "54",
+      "id": 4
+    },
+    {
+      "name": "amirali",
+      "age": "26",
+      "id": 5
+    },
+    {
+      "name": "Mobin",
+      "age": "16",
+      "id": 6
+    },
+    {
+      "name": "milad",
+      "age": "70",
+      "id": 7
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "what in vue js",
+      "author": "amin_saeedi"
+    },
+    {
+      "id": 2,
+      "title": "clean code in js",
+      "author": "qadir_yolme"
+    },
+    {
+      "id": 3,
+      "title": "live-server extension",
+      "author": "sasan_mqds"
+    }
+  ],
+  "discounts": [
+    {
+      "id": 1,
+      "title": "react50",
+      "percent": 50,
+      "creator": "amin_saeedi"
+    },
+    {
+      "id": 2,
+      "title": "node50rad",
+      "percent": 50,
+      "creator": "qadir_yolme"
+    },
+    {
+      "id": 3,
+      "title": "jdfndfbnj",
+      "percent": 45,
+      "creator": "sasan_mqds"
+    }
+  ]
+}
