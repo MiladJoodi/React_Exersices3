@@ -9,7 +9,7 @@ export default function App() {
   const deleteUserHandler = async (event) => {
     event.preventDefault();
 
-    const res = await fetch(`http://localhost:3000/users/${userId}`, {
+    const res = await fetch(`http://localhost:3000/posts/${userId}`, {
       method: "DELETE",
  });
     console.log(res.status);
@@ -37,7 +37,7 @@ export default function App() {
             type="text"
             value={userId}
             placeholder="User ID"
-            onChange={e=> setUserId(e.target.value)}
+            onChange={(e)=> setUserId(e.target.value)}
           />
           <button onClick={deleteUserHandler}>Delete</button>
           <p className="message">
