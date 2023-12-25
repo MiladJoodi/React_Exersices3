@@ -87,16 +87,25 @@ export default function App() {
   const optionHandler = (opt)=> {
 
     console.log(opt)
-    if(opt === 'completed'){
-
-      fetch('http://localhost:3000/todos?isDone=true')
-      .then((res)=> res.json())
-      .then(data=> setTodos(data))
-      
-      console.log(completedTodos)
-      
-
+    
+    switch (opt) {
+      case 'completed':
+          fetch('http://localhost:3000/todos?isDone=true')
+          .then((res)=> res.json())
+          .then(data=> setTodos(data))
+        break;
+      case 'incomplete':
+          fetch('http://localhost:3000/todos?isDone=false')
+          .then((res)=> res.json())
+          .then(data=> setTodos(data))
+        break;
+    
+      default:
+        getAllTodos()
+        break;
     }
+
+    
 
     // setOption(event.target.value)
 
