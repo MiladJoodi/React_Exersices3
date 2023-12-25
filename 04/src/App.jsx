@@ -7,25 +7,36 @@ import Product from "./Components/Product"
 
 function App() {
 
-  const [products, setProducts] = useState([])
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
-  useEffect(()=>{
-    axios.get('https://fakestoreapi.com/products')
-    // axios.get('https://fakestoreapi.com/products?limit=5')
-    .then((response)=>{
-      console.log(response);
-      setProducts(response.data)
+  const registerHandler = (event)=>{
+    event.preventDefault();
+    console.log(event);
+    axios.post('https://project1-68be.restdb.io/rest/products', {
+      name,
+      email,
     })
-  }, [])
+    .then((res)=>{
+      if(res.status === 200){
+        alert("ثبت نام با موفقیت انجام شد")
+      }
+    })
+  }
 
   return (
-    <ul>
-      {
-        products?.map((product)=>(
-          <Product key={product.key} {...product}/>
-        ))
-      }
-    </ul>
+    <div className='login-page'>
+      <div className='form'>
+        <form className='login-form'>
+          <input type="text" placeholder='Name...' value={name} onChange={(event)=>setName(event.target.value)} />
+          <input type="text" placeholder='Email...' value={email} onChange={(event)=>setEmail(event.target.value)} />
+          <button onClick={registerHandler}>Register</button>
+          <p className='message'>
+            Already registered? <a href="#">Sign In</a>
+          </p>
+        </form>
+      </div>
+    </div>
   )
 }
 
