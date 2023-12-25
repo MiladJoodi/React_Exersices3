@@ -4,41 +4,27 @@ import swal from "sweetalert";
 import "./App.css";
 
 export default function App() {
-  const [userName, setUserName] = useState('')
-  const [userAge, setUserAge] = useState('')
+  const [userId, setUserId] = useState('')
 
-  const registerHandler = async ()=>{
+  const deleteUserHandler = async (event) => {
     event.preventDefault();
 
-    const newUserObj = {
-      "name" : userName,
-      "age": userAge
-    } 
+    const res = await fetch(`http://localhost:3000/users/${userId}`, {
+      method: "DELETE",
+ });
+    console.log(res.status);
 
-    const res = await fetch('http://localhost:3000/users', {
-      method: "POST",
-      headers:{
-        'Content-Type' : 'application/json'
-      },
-      body: JSON.stringify(newUserObj)
-    })
-    console.log(res);
-
-    if(res.status === 201){
+    if(res.status === 200){
       swal({
-        title: 'ثبت نام شما با موفقیت انجام شد',
+        title: 'حذف شد',
         icon: 'success',
         buttons: 'خیلی هم عالی'
       })
     }else{
       swal({
-        //Error
+        title: "نشد"
       })
     }
-
-
-    const newUserResult = await res.json()
-    console.log(newUserResult);
 
   }
 
@@ -49,17 +35,11 @@ export default function App() {
         <form className="login-form">
           <input
             type="text"
-            value={userName}
-            placeholder="UserName"
-            onChange={e=> setUserName(e.target.value)}
+            value={userId}
+            placeholder="User ID"
+            onChange={e=> setUserId(e.target.value)}
           />
-          <input
-            type="text"
-            value={userAge}
-            placeholder="Age"
-            onChange={e=> setUserAge(e.target.value)}
-          />
-          <button onClick={registerHandler}>Register</button>
+          <button onClick={deleteUserHandler}>Delete</button>
           <p className="message">
             Are You Registered? <a href="#">Login</a>
           </p>
