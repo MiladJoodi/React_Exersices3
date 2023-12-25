@@ -1,117 +1,19 @@
 {
-  "courses": [
+  "todos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "teacher": "typicode",
-      "views": 189,
-      "details": {
-        "time": "12:03",
-        "studentsCount": 98
-      }
+      "title": "learn JS",
+      "isDone": false,
+      "id": 4
     },
     {
-      "id": 2,
-      "title": "what is npm",
-      "teacher": "amin_saeedi",
-      "views": 200
+      "title": "learn react-router",
+      "isDone": false,
+      "id": 2
     },
     {
       "id": 3,
-      "title": "learn react js",
-      "teacher": "qadir_yolme",
-      "views": 90
-    },
-    {
-      "id": 4,
-      "title": "learn vue js",
-      "teacher": "amin_saeedi",
-      "views": 302
-    },
-    {
-      "id": 5,
-      "title": "vue js",
-      "teacher": "amin_saeedi",
-      "views": 182
-    },
-    {
-      "id": 6,
-      "title": "Node js",
-      "teacher": "amin_saeedi",
-      "views": 99
-    },
-    {
-      "id": 7,
-      "title": "Js Ex",
-      "teacher": "amin_saeedi",
-      "views": 982
-    },
-    {
-      "id": 8,
-      "title": "Black JS",
-      "teacher": "qadir_yolme",
-      "views": 19
-    }
-  ],
-  "comments": [
-    {
-      "id": 2,
-      "body": "لطفا دوره رو سریع‌تر استارت بزنید",
-      "courseId": 4
-    },
-    {
-      "id": 3,
-      "body": "لطفا پروژه فلان رو هم تو دوره هندل کنید",
-      "courseId": 6
-    },
-    {
-      "id": 4,
-      "body": "دوره خیلی خوبی بود",
-      "courseId": 7
-    }
-  ],
-  "users": [
-    {
-      "name": "amirali",
-      "age": "26",
-      "id": 5
-    }
-  ],
-  "articles": [
-    {
-      "id": 1,
-      "title": "what in vue js",
-      "author": "amin_saeedi"
-    },
-    {
-      "id": 2,
-      "title": "clean code in js",
-      "author": "qadir_yolme"
-    },
-    {
-      "id": 3,
-      "title": "live-server extension",
-      "author": "sasan_mqds"
-    }
-  ],
-  "discounts": [
-    {
-      "id": 1,
-      "title": "react50",
-      "percent": 50,
-      "creator": "amin_saeedi"
-    },
-    {
-      "id": 2,
-      "title": "node50rad",
-      "percent": 50,
-      "creator": "qadir_yolme"
-    },
-    {
-      "id": 3,
-      "title": "jdfndfbnj",
-      "percent": 45,
-      "creator": "sasan_mqds"
+      "title": "Learn redux",
+      "isDone": false
     }
   ]
 }
