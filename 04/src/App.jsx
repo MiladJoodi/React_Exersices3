@@ -11,6 +11,7 @@ function App() {
 
   useEffect(()=>{
     axios.get('https://fakestoreapi.com/products')
+    // axios.get('https://fakestoreapi.com/products?limit=5')
     .then((response)=>{
       console.log(response);
       setProducts(response.data)
