@@ -11,21 +11,20 @@ function App() {
     { id: 3, title: "Book", price: 50_000_000, count: 200 },
   ])
 
+  const [user,setUser] = useState({
+    id: 1,
+    name: 'Amin',
+    email: 'test@gmail.com',
+    age: 22
+  })
+
+  console.log(_.pick(user, ['name', 'email']));
+  console.log(_.pickBy(user, _.isNumber));
+
   return (
     <>
       <h1>Lodash</h1>
       <hr />
-      {
-        _.map(products, (product)=> {
-          product.price += 1_000_000
-          return product;
-        }).map((product)=> (
-          <h4 key={product.id}>
-            {product.title} : {product.price}
-          </h4>
-        )
-        )
-      }
 
     </>
   )
