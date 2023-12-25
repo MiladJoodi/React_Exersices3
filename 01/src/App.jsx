@@ -56,7 +56,8 @@ export default function App() {
     })
   }
 
-  const createTodoHandler = ()=>{
+  const createTodoHandler = (event)=>{
+    event.preventDefault();
     fetch('http://localhost:3000/todos',{
       method: "POST",
       headers: {
@@ -67,7 +68,14 @@ export default function App() {
         isDone: false
       })
     }).then(res=>{
-      if(res.status === 200)
+      if(res.status === 201){
+        swal({
+          title: "Todo Creatd Success",
+          icon: 'success',
+          buttons: "Hmmm, ok"
+        })
+        getAllTodos()
+      }
     })
   }
 
