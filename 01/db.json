@@ -2,7 +2,7 @@
   "todos": [
     {
       "title": "learn JS",
-      "isDone": false,
+      "isDone": true,
       "id": 4
     },
     {
@@ -34,6 +34,21 @@
       "title": "s",
       "isDone": false,
       "id": 8
+    },
+    {
+      "title": "er",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "title": "ss",
+      "isDone": false,
+      "id": 10
+    },
+    {
+      "title": "qw",
+      "isDone": false,
+      "id": 11
     }
   ]
 }

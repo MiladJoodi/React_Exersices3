@@ -5,7 +5,7 @@ export default function Todo({ todos, onRemove, onDo }) {
     <>
       {
         todos.map(todo=> (
-          <div className={`todo ${todo.isDone ? "completed": ""}`}>
+          <div key={todo.id} className={`todo ${todo.isDone ? "completed": ""}`}>
           <li className="todo-item">{todo.title}</li>
           <button className="complete-btn" onClick={()=> onDo(todo)}>
             <i className="fas fa-check-circle"></i>

@@ -7,6 +7,7 @@ import Todo from "./Components/Todo";
 export default function App() {
   const [todos, setTodos] = useState([])
   const [newTodoTitle, setNewTodoTitle] = useState('')
+  const [option, setOption] = useState('')
 
   useEffect(()=>{
     getAllTodos()
@@ -17,7 +18,7 @@ export default function App() {
     .then((res)=> res.json())
     .then(data=> setTodos(data))
   }
-
+// Remove Button
   const todoRemoveHandlder = (id)=>{
     fetch(`http://localhost:3000/todos/${id}`,{
       method: "DELETE"
@@ -33,6 +34,7 @@ export default function App() {
     })
   }
 
+// Done Button
   const todoDoneHandler = (todo)=>{
     fetch(`http://localhost:3000/todos/${todo.id}`, {
       method: 'PUT',
@@ -56,6 +58,7 @@ export default function App() {
     })
   }
 
+  // Add To do
   const createTodoHandler = (event)=>{
     event.preventDefault();
     fetch('http://localhost:3000/todos',{
@@ -77,6 +80,27 @@ export default function App() {
         getAllTodos()
       }
     })
+    setNewTodoTitle("")
+  }
+
+  // Select Option
+  const optionHandler = (opt)=> {
+
+    console.log(opt)
+    if(opt === 'completed'){
+
+      fetch('http://localhost:3000/todos?isDone=true')
+      .then((res)=> res.json())
+      .then(data=> setTodos(data))
+      
+      console.log(completedTodos)
+      
+
+    }
+
+    // setOption(event.target.value)
+
+    // {option}
   }
 
   
@@ -97,7 +121,7 @@ export default function App() {
           <i className="fas fa-plus-circle fa-lg"></i>
         </button>
         <div className="select">
-          <select name="todos" className="filter-todo">
+          <select name="todos" className="filter-todo" onChange={(event)=>optionHandler(event.target.value)}>
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="incomplete">Incomplete</option>
