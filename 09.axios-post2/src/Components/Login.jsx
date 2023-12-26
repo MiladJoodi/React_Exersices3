@@ -27,6 +27,9 @@ function Login() {
               icon: 'success',
               confirmButtonText: ' بزن بریم'
             })
+            setTimeout(() => {
+                navigate("/config")
+            }, 2000);
           }
         });
 
