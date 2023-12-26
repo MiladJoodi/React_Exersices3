@@ -35,7 +35,7 @@
 }
 
 @font-face {
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
 } */
 
@@ -45,7 +45,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
-
+:root{
+  --btn-font: 'Ganjnameh';
+  --ganj-font: 'Ganjnameh';
+}
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -54,14 +57,14 @@
 
 body, html {
 	height: 100%;
-	font-family: 'Ganjnameh';
+	font-family: var(--ganj-font);
   direction: rtl;
 
 }
 
 /*---------------------------------------------*/
 a {
-	font-family: 'Ganjnameh';
+	font-family: var(--ganj-font);
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -88,7 +91,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: 'Ganjnameh';
+	font-family: var(--ganj-font);
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -104,12 +107,14 @@ ul, li {
   background-image: url('/images/bg-01.jpg');
 }
 .font-ganj{
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
 }
 
 ::placeholder{
   font-family: 'Ganjnameh' !important;
 }
+
+
 
 /*---------------------------------------------*/
 input {
@@ -160,6 +165,9 @@ button {
 	border: none;
 	background: transparent;
 }
+.swal2-styled{
+  font-family: 'Ganjnameh' !important;
+}
 
 button:hover {
 	cursor: pointer;
@@ -175,7 +183,7 @@ iframe {
 /*==================================================================
 [ Text ]*/
 .txt1 {
-	font-family: 'Ganjnameh';
+	font-family: var(--ganj-font);
   font-size: 13px;
   line-height: 1.4;
   color: #555555;
@@ -183,7 +191,7 @@ iframe {
 }
 
 .txt2 {
-	font-family: 'Ganjnameh';
+	font-family: var(--ganj-font);
   font-size: 13px;
   line-height: 1.4;
   color: #999999;
@@ -207,6 +215,7 @@ iframe {
 .bg2 {background: #1da1f2;}
 .bg3 {background: #cd201f;}
 .bg-github-icon {background: #222222}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
@@ -285,7 +294,7 @@ iframe {
 .login100-form-title {
   width: 100%;
   display: block;
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   font-size: 30px;
   color: #333333;
   line-height: 1.2;
@@ -293,7 +302,7 @@ iframe {
 }
 
 .login100-form-btn{
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   font-size: 18px !important;
 }
 
@@ -323,7 +332,7 @@ input::placeholder{
 }
 
 .label-input100 {
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   font-size: 18px;
   color: #999999;
   line-height: 1.2;
@@ -346,7 +355,7 @@ input::placeholder{
   display: block;
   width: 100%;
   background: transparent;
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   font-size: 18px;
   color: #555555;
   line-height: 1.2;
@@ -437,7 +446,7 @@ input.input100 {
 }
 
 .label-checkbox100 {
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   font-size: 13px;
   color: #999999;
   line-height: 1.4;
@@ -585,7 +594,7 @@ input.input100 {
   right: 12px;
   pointer-events: none;
 
-  font-family: 'Ganjnameh';
+  font-family: var(--ganj-font);
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
