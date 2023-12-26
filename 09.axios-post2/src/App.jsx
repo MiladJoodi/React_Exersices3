@@ -11,17 +11,12 @@ export default function App() {
   const registerHandler = (event) => {
     event.preventDefault();
 
-    axios
-      .post("https://logicalloss.backendless.app/api/data/signup1", {
-        data: {
+    axios.post("https://logicalloss.backendless.app/api/data/signup1", {
           email,
           password,
-        },
-        headers: {
-          'Content-type': 'application/json'
-        },
       })
       .then((res) => {
+        console.log(res.status);
         if (res.status === 200) {
           alert("ثبت نام با موفقیت انجام شد");
         }
