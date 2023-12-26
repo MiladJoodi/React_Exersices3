@@ -12,7 +12,7 @@ export default function App() {
     event.preventDefault();
 
     axios
-      .post("https://project1-68be.restdb.io/rest/login1", {
+      .post("https://logicalloss.backendless.app/api/data/signup1", {
         data: {
           email,
           password,
