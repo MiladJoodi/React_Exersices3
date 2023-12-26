@@ -4,20 +4,21 @@ import "./App.css";
 import axios from "axios";
 
 export default function App() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [check, setCheck] = useState(true)
 
   const registerHandler = (event) => {
     event.preventDefault();
 
     axios
-      .post("https://react20libs-default-rtdb.firebaseio.com/users.json", {
+      .post("https://project1-68be.restdb.io/rest/login1", {
         data: {
-          name,
           email,
+          password,
         },
         headers: {
-          // Codes
+          'Content-type': 'application/json'
         },
       })
       .then((res) => {
@@ -26,6 +27,13 @@ export default function App() {
         }
       });
   };
+
+  const checkHandler = (event)=>{
+    event.preventDefault();
+    
+    setCheck(!check)
+    console.log(check);
+  }
 
   return (
 
@@ -44,25 +52,28 @@ export default function App() {
 					
 					
 					<div class="wrap-input100 validate-input " data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" />
+						<input class="input100" type="text" name="email" value={email} onChange={(e)=> setEmail(e.target.value)} />
 						<span class="focus-input100"></span>
 						<span class="label-input100 font-ganj">ایمیل</span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" />
+						<input class="input100" type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
 						<span class="focus-input100"></span>
 						<span class="label-input100">رمز عبور</span>
 					</div>
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
 						<div class="contact100-form-checkbox">
-							<label class="label-checkbox100" for="ckb1">
+							<button onClick={checkHandler}>
+              <label class={`label-checkbox100 ${check ? 'check' : ''}`} for="ckb1">
 								اطلاعاتتان را ذخیره کنیم؟
 							</label>
 							<input class="input-checkbox100" id="ckb1" type="rad" name="remember-me" />
-            </div>
+            
+              </button>
+              </div>
 
 						<div>
 							<a href="#" class="txt1">
@@ -73,24 +84,28 @@ export default function App() {
 			
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							 ورود
+						<button class="login100-form-btn" onClick={registerHandler}>
+							 ثبت نام
 						</button>
 					</div>
 					
 					<div class="text-center p-t-46 p-b-20">
 						<span class="txt2">
-							or sign up using
+							ورود با
 						</span>
 					</div>
 
 					<div class="login100-form-social flex-c-m">
-						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
-							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
 						</a>
 
-						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
+						<a href="https://github.com/Miladjoodi/" class="login100-form-social-item flex-c-m bg-github-icon m-r-5">
+							<i class="fa-brands fa-github" aria-hidden="true"></i>
+						</a>
+
+            <a href="https://www.facebook.com/miladjood/" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa-brands fa-google" aria-hidden="true"></i>
 						</a>
 					</div>
 				</form>

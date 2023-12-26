@@ -70,6 +70,7 @@ a {
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
+  text-decoration: none;
 }
 
 a:focus {
@@ -105,9 +106,7 @@ ul, li {
 .font-ganj{
   font-family: 'Ganjnameh';
 }
-.font-ganj::placeholder{
-  font-family: 'Ganjnameh';
-}
+
 ::placeholder{
   font-family: 'Ganjnameh' !important;
 }
@@ -116,6 +115,8 @@ ul, li {
 input {
 	outline: none;
 	border: none;
+  font-family: 'Fira Mono' !important;
+  direction: ltr;
 }
 
 textarea {
@@ -205,7 +206,7 @@ iframe {
 .bg1 {background: #3b5998;}
 .bg2 {background: #1da1f2;}
 .bg3 {background: #cd201f;}
-
+.bg-github-icon {background: #222222}
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
@@ -449,9 +450,9 @@ input.input100 {
 
 .label-checkbox100::before {
   content: "\f00c";
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   font-size: 13px;
-  color: black;
+  color: transparent;
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -473,6 +474,11 @@ input.input100 {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.label-checkbox100.check::before{
+  color: #6675df !important;
+  font-size: 13px;
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
