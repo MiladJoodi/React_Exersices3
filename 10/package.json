@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "formik": "^2.4.5",
+    "axios": "^1.6.2",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

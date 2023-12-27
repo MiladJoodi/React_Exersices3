@@ -1,0 +1,44 @@
+body{
+    /* background-color: #3b5c8d; */
+    font-family: Helvetica, Arial;
+    /* position: relative; */
+}
+#wrapper 
+{
+    background: #ffffff;
+    -webkit-box-shadow: 0px 16px 46px -22px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 16px 46px -22px rgba(0,0,0,0.75);
+    box-shadow: 0px 16px 46px -22px rgba(0,0,0,0.75);
+    
+    width: 350px;
+    padding: 10px;
+    
+    margin: -180px 0 0 -150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+p{
+    text-align: center;
+}
+h2{
+    font-weight: normal;
+    text-align: center;
+    font-family:var(--ganj-font)
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+#top-pattern{
+    /* margin-top: -8px; */
+    height: 8px;
+    background: url("https://sendy.colorlib.com/img/top-pattern2.gif") repeat-x 0 0;
+    background-size: auto 8px;
+}
