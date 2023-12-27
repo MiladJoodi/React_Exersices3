@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/config" element={<Config />} />
       </Routes>
     </BrowserRouter>
-b 
+
 
   );
 }
