@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import { Formik } from "formik";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "./App.css";
 
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="login-page">
+      <div className="form">
+        <Formik initialValues={{ name: "Milad", email: "Milad@gmail.com"}} onSubmit={(values)=>{
+          console.log('form input data:', values);
+        }}>
+          
+          {({values, handleChange}) => (
+            <form className="login-form">
+            <input 
+            type="text" 
+            name="name" 
+            value={values.name} 
+            onChange={handleChange}
+            placeholder="Name..." />
 
-export default App
+            <input type="email" 
+            name="email" 
+            value={values.email} 
+            onChange={handleChange}
+            placeholder="Email..." />
+
+            <button>Register</button>
+            <p className="message">
+              already registered? <a href="">Sign In</a>
+            </p>
+          </form>
+          )}
+
+        </Formik>
+      </div>
+    </div>
+  );
+}
