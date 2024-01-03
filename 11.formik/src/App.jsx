@@ -12,7 +12,7 @@ export default function App() {
         }}>
           
           {({values, handleChange}) => (
-            <form className="login-form">
+            <form className="login-form delete">
             <input 
             type="text" 
             name="name" 
