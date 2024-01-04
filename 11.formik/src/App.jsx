@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Formik } from "formik";
+import { Formik, Form, Field } from "formik";
 
 import "./App.css";
 
@@ -16,13 +16,15 @@ export default function App() {
         >
           {({ values, handleChange, handleSubmit }) => (
             <form className="login-form delete" onSubmit={handleSubmit}>
-              <input
+              {/* <input
                 type="text"
                 name="name"
                 value={values.name}
                 onChange={handleChange}
                 placeholder="Name..."
-              />
+              /> */}
+
+              <Field type="text" name="name" placeholder="Name..." />
 
 
               <input
