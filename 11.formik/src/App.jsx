@@ -7,32 +7,36 @@ export default function App() {
   return (
     <div className="login-page">
       <div className="form">
-        <Formik initialValues={{ name: "Milad", email: "Milad@gmail.com"}} onSubmit={(values)=>{
-          console.log('form input data:', values);
-        }}>
-          
-          {({values, handleChange}) => (
+        <Formik
+          initialValues={{ name: "Milad", email: "Milad@gmail.com" }}
+          onSubmit={(values) => {
+            console.log("form input data:", values);
+          }}
+        >
+          {({ values, handleChange }) => (
             <form className="login-form delete">
-            <input 
-            type="text" 
-            name="name" 
-            value={values.name} 
-            onChange={handleChange}
-            placeholder="Name..." />
+              <input
+                type="text"
+                name="name"
+                value={values.name}
+                onChange={handleChange}
+                placeholder="Name..."
+              />
 
-            <input type="email" 
-            name="email" 
-            value={values.email} 
-            onChange={handleChange}
-            placeholder="Email..." />
+              <input
+                type="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                placeholder="Email..."
+              />
 
-            <button>Register</button>
-            <p className="message">
-              already registered? <a href="">Sign In</a>
-            </p>
-          </form>
+              <button>Register</button>
+              <p className="message">
+                already registered? <a href="">Sign In</a>
+              </p>
+            </form>
           )}
-
         </Formik>
       </div>
     </div>
