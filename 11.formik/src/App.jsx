@@ -8,13 +8,14 @@ export default function App() {
     <div className="login-page">
       <div className="form">
         <Formik
-          initialValues={{ name: "Milad", email: "Milad@gmail.com" }}
-          onSubmit={(values) => {
-            console.log("form input data:", values);
-          }}
+          initialValues={
+            { name: "Milad", email: "Milad@gmail.com" }}
+            onSubmit={(values)=>{
+              console.log("Form Inputs Data=>", values);
+            }}
         >
-          {({ values, handleChange }) => (
-            <form className="login-form delete">
+          {({ values, handleChange, handleSubmit }) => (
+            <form className="login-form delete" onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="name"
@@ -22,6 +23,7 @@ export default function App() {
                 onChange={handleChange}
                 placeholder="Name..."
               />
+
 
               <input
                 type="email"
