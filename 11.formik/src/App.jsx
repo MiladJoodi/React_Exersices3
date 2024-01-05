@@ -1,9 +1,39 @@
 import React, { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useFormik } from "formik";
 
 import "./App.css";
 
 export default function App() {
+
+  const form = useFormik({
+    initialValues: { name: "", email: "" },
+
+    onSubmit: (values, {setSubmitting}) => {
+      console.log("Form Inputs Data=>", values);
+      setTimeout(()=>{
+        setSubmitting(false)
+      }, 3000)
+    },
+    validate: (values)=>{
+      const errors = {}
+
+      if(values.name === ''){
+        errors.name = 'وارد کردن نام اجباری می باشد'
+      } else if (values.name.length<4){
+        errors.name = "نام شما باید حداقل 4 کاراکتر باشد"
+      }
+
+      if(values.email === ''){
+        errors.email = 'وارد کردن ایمیل الزامیست'
+      }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+        errors.email = 'ایمیل وارد شده معتبر نیست'
+      }
+      
+
+      return errors
+    }
+  })
+
   return (
     <div className="login-page">
       <div className="form">
