@@ -1,109 +1,342 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@font-face {
+  font-family: vazirlight;
+  src: url(./fonts/vazir/Vazir-Light.woff) format("woff");
+}
 
-.login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+@font-face {
+  font-family: vazir;
+  src: url(./fonts/vazir/Vazir-Bold.woff) format("woff");
 }
-.form {
-  position: relative;
-  z-index: 1;
-  background: #ffffff;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
+
+body {
+  background: linear-gradient(45deg, #050505, #3f5efb);
+  height: 100vh;
+  padding: 0rem 0.4rem;
+}
+
+/* form & input */
+@media (min-width: 825px) {
+  form {
+    width: 561px;
+  }
+}
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 3em 3rem 11rem;
+  height: 320px;
+  border-radius: 20px;
+  display: grid;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  position: relative;
+  margin-top: 6rem;
 }
-.form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
+
+form main {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  row-gap: 0px;
 }
-.form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4caf50;
+
+.form-title {
+  color: #fff;
+  font-family: vazir;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+form a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 12px;
+}
+
+form a:hover {
+  text-shadow: 2px 2px 6px #00000040;
+}
+
+form a:active {
+  text-shadow: none;
+}
+
+form main input {
+  direction: rtl;
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  width: 200px;
+  padding: 1em;
+  font-family: vazir;
+  margin-bottom: 2em;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5000px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  direction: rtl;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+form main input:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+
+form main input[type="email"]:focus,
+form main input[type="password"]:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+
+::-moz-placeholder {
+  direction: rtl;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+:-ms-input-placeholder {
+  direction: rtl;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+::placeholder {
+  direction: rtl;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* form & input */
+/* selectBox */
+select {
+  font-family: vazir;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: none;
+  border-left: 16px solid transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5000px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  direction: rtl;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  background: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: auto;
   width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #ffffff;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+}
+
+option {
+  background-color: #3f5efb;
+  font-family: vazirlight;
+}
+
+/* selectBox */
+/* form-check-input */
+
+.form-check-label {
+  color: white;
+  font-family: vazirlight;
+}
+
+.form-check-input {
+  position: relative;
+  top: 4px;
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+}
+
+/* drop */
+
+.drop {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+.drop-1 {
+  height: 80px;
+  width: 80px;
+  top: -20px;
+  left: -40px;
+  z-index: -1;
+}
+
+.drop-2 {
+  height: 80px;
+  width: 80px;
+  bottom: -30px;
+  right: 89px;
+}
+
+.drop-3 {
+  height: 100px;
+  width: 100px;
+  bottom: 120px;
+  right: -67px;
+  z-index: -1;
+}
+
+.drop-4 {
+  height: 120px;
+  width: 120px;
+  top: -60px;
+  right: -42px;
+}
+
+.drop-5 {
+  height: 60px;
+  width: 60px;
+  bottom: 170px;
+  left: -20px;
+  z-index: -1;
+}
+
+/* drop */
+
+/* button */
+
+button {
+  width: 120px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.5rem;
+  outline: none;
+  color: white;
+  border: none;
+  font-family: vazir;
+  border-radius: 20px;
+  margin-top: 2rem;
+}
+
+button:hover {
   cursor: pointer;
 }
-.form button:hover,
-.form button:active,
-.form button:focus {
-  background: #43a047;
-}
-.form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
-}
-.form .message a {
-  color: #4caf50;
-  text-decoration: none;
-}
-.form .register-form {
-  display: none;
-}
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.container:before,
-.container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-.container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
-}
-.container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
-}
-.container .info span a {
-  color: #000000;
-  text-decoration: none;
-}
-.container .info span .fa {
-  color: #ef3b3a;
-}
-body {
-  background: #76b852; /* fallback for old browsers */
-  background: rgb(141, 194, 111);
-  background: linear-gradient(
-    90deg,
-    rgba(141, 194, 111, 1) 0%,
-    rgba(118, 184, 82, 1) 50%
-  );
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+button:active {
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.form button.invalid-btn {
-  background-color: rgba(76, 175, 80, 0.5);
+/* button */
+
+@media (max-width: 767px) {
+  form {
+    width: 400px !important;
+    height: 600px;
+    margin-bottom: 3rem;
+  }
+
+  form main {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  .drop-2 {
+    display: none !important;
+  }
+
+  form main {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  form main input {
+    width: 91% !important;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .drop-4 {
+    right: -14px;
+  }
+
+  .drop-3 {
+    bottom: 46px;
+    right: -20px;
+  }
+
+  .drop-1 {
+    left: -6px;
+  }
+}
+
+@media (max-width: 824px) {
+  form {
+    width: 500px;
+  }
+}
+
+@media (max-width: 560px) {
+  form {
+    padding: 3em 1rem 11rem;
+    width: 89% !important;
+  }
+
+  .drop-4 {
+    width: 84px;
+    height: 84px;
+    right: 25px;
+    top: -64px;
+  }
+
+  .drop-3 {
+    right: 14px;
+    bottom: -18px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .drop-5 {
+    bottom: 87px;
+  }
+
+  .drop-1 {
+    width: 40px;
+    height: 40px;
+  }
+
+  .drop-5 {
+    bottom: 54px;
+    left: -7px;
+    opacity: 0.4;
+  }
 }

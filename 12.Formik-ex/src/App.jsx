@@ -1,75 +1,114 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from "formik";
 
 import "./App.css";
 
 export default function App() {
   const form = useFormik({
-    initialValues: { name: "", email: "" },
-
-    onSubmit: (values, { setSubmitting }) => {
-      console.log("Form Inputs Data=>", values);
-      setTimeout(() => {
-        setSubmitting(false);
-      }, 3000);
+    initialValues: {
+      name: "",
+      phone: "",
+      address: "",
+      email: "",
+      password: "",
+      desc: "",
+      products: "-1",
+      check: false,
     },
-    validate: (values) => {
-      const errors = {};
-
-      if (values.name === "") {
-        errors.name = "وارد کردن نام اجباری می باشد";
-      } else if (values.name.length < 4) {
-        errors.name = "نام شما باید حداقل 4 کاراکتر باشد";
-      }
-
-      if (values.email === "") {
-        errors.email = "وارد کردن ایمیل الزامیست";
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-      ) {
-        errors.email = "ایمیل وارد شده معتبر نیست";
-      }
-
-      return errors;
+    onSubmit: (values) => {
+      console.log(values);
     },
   });
 
   return (
-    <div className="login-page">
-      <div className="form">
-        <form onSubmit={form.submitHandler}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name..."
-            value={form.values.name}
-            onChange={form.handleChange}
-            onBlur={form.handleBlur}
-          />
-          {form.errors.name && form.touched.name && <h2>{form.errors.name}</h2>}
+    <form onSubmit={form.handleSubmit}>
+      <p className="form-title">لطفا فرم زیر را کامل کنید</p>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email..."
-            value={form.values.email}
-            onChange={form.handleChange}
-            onBlur={form.handleBlur}
-          />
-          {form.errors.email && form.touched.email && <h2>{form.errors.email}</h2>}
+      <main>
+        <input
+          type="text"
+          name="phone"
+          onChange={form.handleChange}
+          value={form.values.phone}
+          onBlur={form.handleBlur}
+          placeholder="شماره تماس"
+        />
+        <input
+          type="text"
+          name="name"
+          value={form.values.name}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          placeholder="نام و نام خانوادگی"
+        />
+        <input
+          type="text"
+          name="address"
+          value={form.values.address}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          placeholder="آدرس"
+        />
+        <input
+          type="email"
+          name="email"
+          value={form.values.email}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          placeholder="ایمیل"
+        />
+        <input
+          type="password"
+          name="password"
+          value={form.values.password}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          placeholder="رمز عبور"
+        />
+        <input
+          type="text"
+          name="desc"
+          value={form.values.desc}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+          placeholder="توضیحات"
+        />
+      </main>
 
-          <button
-            type="submit"
-            className={form.isSubmitting ? "invalid-btn" : ""}
-            disabled={form.isSubmitting}
-          >
-            {form.isSubmitting ? "Loading" : "Register"}
-          </button>
-          <p className="message">
-            already registered? <a href="">Sign In</a>
-          </p>
-        </form>
+      <section>
+        <select
+          name="product"
+          onChange={form.handleChange}
+          id="selectBox"
+          defaultValue="-1"
+        >
+          <option value="-1">محصول خود را انتخاب کنید</option>
+          <option value="kif">کیف</option>
+          <option value="kafsh">کفش</option>
+          <option value="kamarband">کمربند</option>
+        </select>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+          checked={form.values.check}
+          name="check"
+          onChange={form.handleChange}
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault">
+          قوانین و مقررات و میپذیرم
+        </label>
+      </section>
+
+      <button type="submit">ارسال</button>
+
+      <div className="drops">
+        <div className="drop drop-1"></div>
+        <div className="drop drop-2"></div>
+        <div className="drop drop-3"></div>
+        <div className="drop drop-4"></div>
+        <div className="drop drop-5"></div>
       </div>
-    </div>
+    </form>
   );
 }
