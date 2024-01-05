@@ -17,8 +17,9 @@ export default function App() {
       console.log(isValid)
     }catch(err){
       let errors = err.inner.reduce((acc, err)=> ({
-        ...acc, [err.path]: err.message)
-      })
+        ...acc,
+        [err.path]: err.message
+      }))
     }
   }
 
