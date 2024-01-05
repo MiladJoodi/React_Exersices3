@@ -4,12 +4,14 @@ import { useForm } from "react-hook-form";
 import "./App.css";
 
 export default function App() {
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, formState: {errors} } = useForm({
     defaultValues: {
       name: "",
       email: "",
     }
   })
+
+  console.log("error=>", errors)
 
   const formSubmiting = (data) => {
     console.log("Data=> ", data)
