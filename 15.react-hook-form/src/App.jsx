@@ -11,7 +11,7 @@ export default function App() {
     }
   })
 
-  const formSubmiting = (data)=>{
+  const formSubmiting = (data) => {
     console.log("Data=> ", data)
   }
 
@@ -19,9 +19,18 @@ export default function App() {
     <div className="login-page">
       <div className="form">
         <form className="login-form" onSubmit={handleSubmit(formSubmiting)}>
-          <input type="text" {...register('name')} placeholder="Name ..." />
+          <input type="text" {...register('name', {
+            required: true,
+            minLength: 3,
+            maxLength: 12
+          })}
+            placeholder="Name ..." />
 
-          <input type="text" {...register('email')} placeholder="Email ..." />
+          <input type="text" {...register('email', {
+            required: true,
+            minLength: 10,
+            maxLength: 30
+          })} placeholder="Email ..." />
 
           <button type="submit">Register</button>
           <p className="message">
