@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'IranNastaliq';
+    src: url('IranNastaliq.eot');
+    src: url('IranNastaliq.eot?#iefix') format('embedded-opentype'),
+        url('IranNastaliq.woff2') format('woff2'),
+        url('IranNastaliq.woff') format('woff'),
+        url('IranNastaliq.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
