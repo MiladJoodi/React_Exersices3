@@ -63,6 +63,7 @@ export default function App() {
             Already registered? <a href="#">Sign In</a>
           </p>
         </form>
+        <DevTool control={control} />
       </div>
     </div>
   );
