@@ -1,20 +1,19 @@
 import React from "react";
 import registerSchema from "./Validations/register";
-
 import "./App.css";
 
 export default function App() {
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event)=>{
     event.preventDefault();
-
+    
     const newUser = {
       name: event.target[0].value,
-      email: event.target[1].value,
-    };
+      email: event.target[1].value
+    }
 
     const isValid = await registerSchema.isValid(newUser);
-    console.log(isValid);
-  };
+    console.log(isValid)
+  }
 
   return (
     <div className="login-page">
