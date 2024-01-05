@@ -19,7 +19,8 @@ export default function App() {
       let errors = err.inner.reduce((acc, err)=> ({
         ...acc,
         [err.path]: err.message
-      }))
+      }), {})
+      console.log(errors)
     }
   }
 
