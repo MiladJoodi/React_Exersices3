@@ -36,9 +36,15 @@ export default function App() {
                 {console.log(touched)}
                 <Field type="text" name="name" placeholder="Name..." />
                 {/* {errors.name && touched.name && <h2>{errors.name}</h2>} */}
-                <ErrorMessage name="name" component="h1" />
+                <ErrorMessage name="name" component="h1">
+                  {(msg)=> <span>{msg]</span>}
+                </ErrorMessage>
                 <Field type="email" name="email" placeholder="Email..." />
-                <ErrorMessage name="email" component="h1" />
+                <ErrorMessage name="email" component="h1">
+                  {(msg)=>(
+                    <span>{msg}</span>
+                  )}
+                </ErrorMessage>
                 {/* {errors.email && touched.email && errors.email} */}
                 <button type="submit">Register</button>
                 <p className="message">
