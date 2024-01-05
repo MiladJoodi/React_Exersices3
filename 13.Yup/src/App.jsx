@@ -4,7 +4,7 @@ import "./App.css";
 
 export default function App() {
 
-  const [errors, setErrors] = useState()
+  const [errors, setErrors] = useState({})
 
   const handleSubmit = async (event)=>{
     event.preventDefault();
@@ -23,7 +23,7 @@ export default function App() {
         ...acc,
         [err.path]: err.message
       }), {})
-      console.log(errors)
+      setErrors(errors)
     }
   }
 
@@ -32,7 +32,9 @@ export default function App() {
       <div className="form">
         <form className="login-form" onSubmit={handleSubmit}>
           <input type="text" name="name" placeholder="Name ..." />
+            {errors.name && errors.name}
           <input type="email" name="email" placeholder="Email ..." />
+            {errors.email && errors.email}
           <button type="submit">Register</button>
           <p className="message">
             Already registered? <a href="#">Sign In</a>
