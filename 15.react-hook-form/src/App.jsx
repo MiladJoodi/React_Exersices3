@@ -33,7 +33,7 @@ export default function App() {
             }
           })}
             placeholder="Name ..." />
-          {errors.name && errors.message}
+          {errors.name && errors.name.message}
 
           <input type="text" {...register('email', {
             required: "وارد کردن ایمیل الزامیست",
@@ -46,7 +46,7 @@ export default function App() {
               message: "حداکثر 30 کاراکتر وارد کنید"
             }
           })} placeholder="Email ..." />
-          {errors.email && errors.message}
+          {errors.email && errors.email.message}
 
 
           <button type="submit">Register</button>
