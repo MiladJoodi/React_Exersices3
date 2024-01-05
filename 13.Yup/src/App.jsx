@@ -9,10 +9,17 @@ export default function App() {
     const newUser = {
       name: event.target[0].value,
       email: event.target[1].value
+    };
+    try{
+      const isValid = await registerSchema.validate(newUser, {
+        abortEarly: false,
+      });
+      console.log(isValid)
+    }catch(err){
+      let errors = err.inner.reduce((acc, err)=> ({
+        ...acc, [err.path]: err.message)
+      })
     }
-
-    const isValid = await registerSchema.isValid(newUser);
-    console.log(isValid)
   }
 
   return (
