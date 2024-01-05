@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import registerSchema from "./Validations/register";
 import "./App.css";
 
 export default function App() {
+
+  const [errors, setErrors] = useState()
+
   const handleSubmit = async (event)=>{
     event.preventDefault();
     
