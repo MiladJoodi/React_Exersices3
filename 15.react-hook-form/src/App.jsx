@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import "./App.css";
 
 export default function App() {
-  const { register, handleSubmit, formState: {errors} } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: "",
       email: "",
@@ -33,6 +33,7 @@ export default function App() {
             }
           })}
             placeholder="Name ..." />
+          {errors.name && errors.message}
 
           <input type="text" {...register('email', {
             required: "وارد کردن ایمیل الزامیست",
@@ -45,6 +46,8 @@ export default function App() {
               message: "حداکثر 30 کاراکتر وارد کنید"
             }
           })} placeholder="Email ..." />
+          {errors.email && errors.message}
+
 
           <button type="submit">Register</button>
           <p className="message">
