@@ -27,17 +27,20 @@ export default function App() {
           return errors
         }}
           initialValues={{ name: "", email: "" }}
-          onSubmit={(values) => {
+          onSubmit={(values,{setSubmitting}) => {
             console.log("Form Inputs Data=>", values);
+            setTimeout(()=>{
+              setSubmitting(false)
+            }, 3000)
           }}
         >
-          {({ values, handleChange, handleSubmit, errors, touched }) => (
+          {({ isSubmitting }) => (
               <Form className="login-form">
-                {console.log(touched)}
+                {/* {console.log(touched)} */}
                 <Field type="text" name="name" placeholder="Name..." />
                 {/* {errors.name && touched.name && <h2>{errors.name}</h2>} */}
                 <ErrorMessage name="name" component="h1">
-                  {(msg)=> <span>{msg]</span>}
+                  {(msg)=> <span>{msg}</span>}
                 </ErrorMessage>
                 <Field type="email" name="email" placeholder="Email..." />
                 <ErrorMessage name="email" component="h1">
@@ -46,7 +49,12 @@ export default function App() {
                   )}
                 </ErrorMessage>
                 {/* {errors.email && touched.email && errors.email} */}
-                <button type="submit">Register</button>
+                <button type="submit"
+                className={isSubmitting ? 'invalid-btn' : ''}
+                disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Loading': 'Register'}
+                  </button>
                 <p className="message">
                 already registered? <a href="">Sign In</a>
               </p>
