@@ -39,7 +39,7 @@ export default function App() {
           value={form.values.name}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
-          placeholder="نام ونام خانوادگی"
+          placeholder="نام و نام خانوادگی"
         />
         <input
           type="text"
