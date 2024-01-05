@@ -20,16 +20,28 @@ export default function App() {
       <div className="form">
         <form className="login-form" onSubmit={handleSubmit(formSubmiting)}>
           <input type="text" {...register('name', {
-            required: true,
-            minLength: 3,
-            maxLength: 12
+            required: "وارد کردن نام الزامیست",
+            minLength: {
+              value: 3,
+              message: "حداقل 3 کاراکتر وارد کنید"
+            },
+            maxLength: {
+              value: 12,
+              message: "حداکثر 12 کاراکتر وارد کنید"
+            }
           })}
             placeholder="Name ..." />
 
           <input type="text" {...register('email', {
-            required: true,
-            minLength: 10,
-            maxLength: 30
+            required: "وارد کردن ایمیل الزامیست",
+            minLength: {
+              value: 10,
+              message: "حداقل 10 کاراکتر وارد کنید"
+            },
+            maxLength: {
+              value: 30,
+              message: "حداکثر 30 کاراکتر وارد کنید"
+            }
           })} placeholder="Email ..." />
 
           <button type="submit">Register</button>
