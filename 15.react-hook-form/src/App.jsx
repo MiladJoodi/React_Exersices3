@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { DevTool } from '@hookform/devtools'
 
 import "./App.css";
 
 export default function App() {
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { 
+    register,
+    control,
+    handleSubmit,
+    formState: { errors } } = useForm({
     defaultValues: {
       name: "",
       email: "",
@@ -44,6 +49,10 @@ export default function App() {
             maxLength: {
               value: 30,
               message: "حداکثر 30 کاراکتر وارد کنید"
+            },
+            pattern: {
+              value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/g,
+              message: "فرمت ایمیل وارد شده اشتباه است"
             }
           })} placeholder="Email ..." />
           {errors.email && errors.email.message}
