@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import "./App.css";
 
@@ -8,38 +8,44 @@ export default function App() {
     <div className="login-page">
       <div className="form">
         <Formik
-          initialValues={
-            { name: "Milad", email: "Milad@gmail.com" }}
-            onSubmit={(values)=>{
-              console.log("Form Inputs Data=>", values);
-            }}
+        validate={(values)=>{
+          const errors = {}
+
+          if(values.name === ''){
+            errors.name = 'وارد کردن نام اجباری می باشد'
+          } else if (values.name.length<4){
+            errors.name = "نام شما باید حداقل 4 کاراکتر باشد"
+          }
+
+          if(values.email === ''){
+            errors.email = 'وارد کردن ایمیل الزامیست'
+          }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+            errors.email = 'ایمیل وارد شده معتبر نیست'
+          }
+          
+
+          return errors
+        }}
+          initialValues={{ name: "", email: "" }}
+          onSubmit={(values) => {
+            console.log("Form Inputs Data=>", values);
+          }}
         >
-          {({ values, handleChange, handleSubmit }) => (
-            <form className="login-form delete" onSubmit={handleSubmit}>
-              {/* <input
-                type="text"
-                name="name"
-                value={values.name}
-                onChange={handleChange}
-                placeholder="Name..."
-              /> */}
-
-              <Field type="text" name="name" placeholder="Name..." />
-
-
-              <input
-                type="email"
-                name="email"
-                value={values.email}
-                onChange={handleChange}
-                placeholder="Email..."
-              />
-
-              <button>Register</button>
-              <p className="message">
+          {({ values, handleChange, handleSubmit, errors, touched }) => (
+              <Form className="login-form">
+                {console.log(touched)}
+                <Field type="text" name="name" placeholder="Name..." />
+                {/* {errors.name && touched.name && <h2>{errors.name}</h2>} */}
+                <ErrorMessage name="name" component="h1" />
+                <Field type="email" name="email" placeholder="Email..." />
+                <ErrorMessage name="email" component="h1" />
+                {/* {errors.email && touched.email && errors.email} */}
+                <button type="submit">Register</button>
+                <p className="message">
                 already registered? <a href="">Sign In</a>
               </p>
-            </form>
+              </Form>
+              
           )}
         </Formik>
       </div>
