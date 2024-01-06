@@ -107,3 +107,7 @@ body {
 .form button.invalid-btn {
   background-color: rgba(76, 175, 80, 0.5);
 }
+
+.rtl{
+  direction: rtl;
+}

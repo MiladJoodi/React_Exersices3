@@ -15,7 +15,7 @@ export default function App() {
   }
 
   return (
-    <div className="login-page">
+    <div className={`login-page ${i18n.language === "fa" ? "rtl" : null}`}>
       <div className="form">
         <form className="login-form">
           <input type="text" placeholder="Name ..." />
