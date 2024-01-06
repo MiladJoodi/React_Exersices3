@@ -10,9 +10,14 @@ export default function App() {
     control,
     handleSubmit,
     formState: { errors } } = useForm({
-    defaultValues: {
-      name: "",
-      email: "",
+    defaultValues: async ()=>{
+      const res = await fetch('https://jsonplaceholder.typicode.com/users/1')
+      const data = await res.json()
+      // این دیتا کل اون اطلاعاتی هستش که از فتچ ککردن میاد
+      return{
+        name: data.name,
+        email: ''
+      }
     }
   })
 
