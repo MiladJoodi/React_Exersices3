@@ -16,7 +16,11 @@ export default function App() {
       // این دیتا کل اون اطلاعاتی هستش که از فتچ ککردن میاد
       return{
         name: data.name,
-        email: ''
+        email: data.email,
+        socials: {
+          telegram: '@Joodi',
+          instagram: '@Milad_Joodi'
+        }
       }
     }
   })
@@ -62,6 +66,13 @@ export default function App() {
           })} placeholder="Email ..." />
           {errors.email && errors.email.message}
 
+          <input type="text" {...register('socials.telegram', {
+            
+          })} placeholder="Telegram ..." />
+
+          <input type="text" {...register('socials.instagram', {
+            
+          })} placeholder="Instagram ..." />
 
           <button type="submit">Register</button>
           <p className="message">
