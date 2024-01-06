@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
+import i18n from "./i18n";
 
 import "./App.css";
 
@@ -7,8 +8,10 @@ export default function App() {
 
   const { t } = useTranslation();
 
+  console.log(i18n.language)
+
   const changeLanguage = (event)=>{
-    console.log(event.target.value)
+    i18n.changeLanguage(event.target.value)
   }
 
   return (
