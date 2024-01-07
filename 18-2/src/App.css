@@ -1,0 +1,10 @@
+*{
+    /* direction: rtl; */
+    font-family: 'vazir';
+}
+.ltr{
+    direction: ltr;
+}
+.rtl{
+    direction: rtl;
+}
