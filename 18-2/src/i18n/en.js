@@ -1,6 +1,6 @@
 const en = {
     registerForm: "Registeration Form",
-    alreadyRegister: "already registered",
+    alreadyRegister: "already registered?",
     login: ' Login',
     name: 'Name',
     namePlaceHolder: 'Enter Your Name',

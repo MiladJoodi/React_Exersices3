@@ -1,7 +1,7 @@
 const fa = {
     registerForm: "فرم عضویت",
     alreadyRegister: "قبلا عضو شده اید؟",
-    login: 'ورود',
+    login: ' ورود',
     name: 'نام',
     namePlaceHolder: 'نام خود را وارد کنید',
     email: 'ایمیل',
