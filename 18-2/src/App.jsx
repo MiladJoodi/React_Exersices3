@@ -13,15 +13,19 @@ function App() {
   const changeLanguage = (userLang) => {
     
     console.log(userLang)
-    if(userLang){
-      console.log("s");
+    if (userLang) {
+      i18n.changeLanguage("en");
+    } else {
+      i18n.changeLanguage("fa");
     }
         
       }
 
   return (
     <section className="bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+              <ToggleSwitch userLang={changeLanguage} />
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 relative">
 
         <div className="flex h-screen items-center justify-center px-4 py-10 sm:py-16 lg:py-24 bg-gray-50 sm:px-6 lg:px-8">
           <div>
@@ -42,14 +46,12 @@ function App() {
           </div>
         </div>
 
-        <div className="flex rtl items-center justify-center px-4 py-8 bg-white sm:px-6 lg:px-8 sm:py-11 lg:py-11">
+        <div className={`flex ${i18n.language ==='fa' ? 'rtl' : 'ltr'} items-center justify-center px-4 py-8 bg-white sm:px-6 lg:px-8 sm:py-11 lg:py-11`}>
+
           <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto relative">
-            <div className="flex items-center">
-              <div>
+            <div className="">
               <h2 className="text-3xl leading-tight text-black sm:text-3xl">{t('registerForm')}</h2>
               <p className="mt-2 text-base text-gray-600">{t('alreadyRegister')}<a href="#" title="" className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 hover:underline focus:text-blue-700">{t('login')}</a></p>
-              </div>
-              <ToggleSwitch userLang={changeLanguage} />
             </div>
             <form action="#" method="POST" className="mt-8">
               <div className="space-y-5">

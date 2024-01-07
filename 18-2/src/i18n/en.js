@@ -13,7 +13,7 @@ const en = {
     gmailBtn: 'Login With Gmail',
     facebookBtn: 'Login With Facebook',
     oneStep: 'You are one step away from membership',
-    confirm: 'After confirming the membership, an email with a confirmation link will be sent to you.'
+    confirm: 'After membership, will be sent to you a confirmation link'
 
 }
 export default en;

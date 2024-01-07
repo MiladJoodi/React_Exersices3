@@ -12,7 +12,7 @@ function ToggleSwitch({ userLang }) {
       />
 	    <label htmlFor="language-toggle"></label>
 	    <span className="on">فارسی</span>
-	    <span className="off">انگلیسی</span>
+	    <span className="off">En</span>
   	</div>
  </center>
 

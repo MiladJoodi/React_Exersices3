@@ -1,8 +1,10 @@
 .switch {
-	position: absolute;
+	position: fixed;
 	display: inline-block;
 	left: 0;
+	bottom: 20px;
 	margin: 0 5px;
+	z-index: 10;
   }
   
   .switch > span {
