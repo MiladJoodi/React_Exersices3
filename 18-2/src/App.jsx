@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import { useTranslation } from 'react-i18next'
+import Toggle from 'react-toggle'
+import ToggleSwitch from "./components/ToggleSwitch";
 
 import i18n from "./i18n";
 
