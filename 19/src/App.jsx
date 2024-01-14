@@ -6,6 +6,7 @@ import './App.css'
 function App() {
 
   const [phone, setPhone] = useState('')
+  const [code, setCode] = useState('')
   const [isSent, setInSent] = useState(false)
 
   const sendCode = async (event) => {
@@ -36,8 +37,11 @@ function App() {
     console.log('Response data => ', data)
   }
 
-  const veifyCode = async (event)=>{
+  const verifyCode = async (event)=>{
     event.preventDefault();
+
+    console.log(phone)
+    console.log(code)
   }
 
   return (
@@ -46,7 +50,7 @@ function App() {
         <form className="login-form">
           {isSent ?
             <>
-              <input type="number" placeholder="Code" onChange={e => setPhone(e.target.value)} />
+              <input type="number" placeholder="Code" onChange={e => setCode(e.target.value)} />
               <button onClick={verifyCode}>Enter Code</button>
             </> :
             <>
