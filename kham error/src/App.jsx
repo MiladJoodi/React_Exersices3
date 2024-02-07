@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import axios from './axios'
 import Loading from './Loading/loading'
 import FastFoodList from './FastFoodList/fastFoodList'
+import SearchBar from './SearchBar/searchBar'
 
 function App() {
 
@@ -28,6 +29,14 @@ function App() {
     fetchData(categoryId)
   }
 
+  //search
+  const searchItems = async (term)=>{
+    setLoading(true)
+    const response = await axios.get(
+      `/FastFood/search/${term ? "?term=" + term: ""}`
+    )
+  }
+
 
   const renderContent = ()=>{
     if(loading){
@@ -39,7 +48,9 @@ function App() {
   return (
     <div className='wrapper bg-faded-dark'>
       <Header></Header>
-      <CategoryList filterItems={filterItems}></CategoryList>
+      <CategoryList filterItems={filterItems}>
+        <SearchBar searchItems={searchItems} />
+      </CategoryList>
       <div className='container mt-4'>
         {renderContent()}
       </div>
