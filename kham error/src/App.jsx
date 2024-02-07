@@ -9,18 +9,25 @@ import FastFoodList from './FastFoodList/fastFoodList'
 function App() {
 
   const [loading, setLoading] = useState(false)
-  const [fastFoodItems, setfastFoods] = useState([])
+  const [fastFoodItems, setFastFoods] = useState([])
 
   const fetchData = async (categoryId = null)=>{
     setLoading(true)
-    const response = await axios.get(`/FastFood/list/${categoryId ? '?categoryId='+ categoryId : ""}`)
+    const response = await axios.get(`/FastFood/list/${categoryId ? "?categoryId="+ categoryId : ""}`)
     setLoading(false)
-    setfastFoods(response.data)
+    setFastFoods(response.data)
+    // alert(response.data)
   }
 
   useEffect(()=>{
     fetchData()
   },[])
+
+
+  const filterItems = (categoryId)=>{
+    fetchData(categoryId)
+  }
+
 
   const renderContent = ()=>{
     if(loading){
@@ -32,7 +39,7 @@ function App() {
   return (
     <div className='wrapper bg-faded-dark'>
       <Header></Header>
-      <CategoryList />
+      <CategoryList filterItems={filterItems}></CategoryList>
       <div className='container mt-4'>
         {renderContent()}
       </div>
