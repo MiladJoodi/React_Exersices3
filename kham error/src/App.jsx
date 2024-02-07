@@ -4,6 +4,7 @@ import CategoryList from './CategoryList/categoryList'
 import { useEffect, useState } from 'react'
 import axios from './axios'
 import Loading from './Loading/loading'
+import FastFoodList from './FastFoodList/fastFoodList'
 
 function App() {
 
@@ -25,13 +26,16 @@ function App() {
     if(loading){
       return <Loading />
     }
-    return <FastFood />
+    return <FastFoodList fastFoodItems={fastFoodItems} />
   }
 
   return (
     <div className='wrapper bg-faded-dark'>
       <Header></Header>
       <CategoryList />
+      <div className='container mt-4'>
+        {renderContent()}
+      </div>
     </div>
   )
 }
