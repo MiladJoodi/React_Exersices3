@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "../axios"
+import Loading from "../Loading/loading"
 
 const CategoryList = () => {
     const [loading, setLoading] = useState(true)
@@ -13,6 +14,12 @@ const CategoryList = () => {
         }
         fetchCategories()
     }, [])
+
+    const renderContent = ()=>{
+        if(loading){
+            return <Loading />
+        }
+    }
 
     return (
         <nav className="container mt-n5">

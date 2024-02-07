@@ -7,3 +7,5 @@ const Loading = ({theme})=>{
         </div>
     )
 }
+
+export default Loading
