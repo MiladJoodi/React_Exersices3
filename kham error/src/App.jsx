@@ -6,6 +6,7 @@ import axios from './axios'
 import Loading from './Loading/loading'
 import FastFoodList from './FastFoodList/fastFoodList'
 import SearchBar from './SearchBar/searchBar'
+import notFound from './assets/images/404.png'
 
 function App() {
 
@@ -41,6 +42,16 @@ function App() {
   const renderContent = ()=>{
     if(loading){
       return <Loading />
+    }
+    if(fastFoodItems.length === 0){
+      return(
+        <>
+        <div className='alert alert-warning text-center'>
+          برای کلید واژه فوق موردی یافت نشد
+        </div>
+        <img className='mx-auto mt-5' src=""/>
+        </>
+      )
     }
     return <FastFoodList fastFoodItems={fastFoodItems} />
   }
